@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Data Fetching (API)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .card {
+            background: #34495e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 380px;
+        }
+        h2 {
+            color: #f1c40f;
+            margin-top: 0;
+        }
+        p#adviceText {
+            font-size: 18px;
+            min-height: 60px;
+            line-height: 1.5;
+            color: #ecf0f1;
+        }
+        button {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Live Advice Generator 💡</h2>
+        <p id="adviceText">Button daba kar naya mashwara hasil karein...</p>
+        <button onclick="getAdvice()">Get Advice</button>
+    </div>
+
+    <script>
+        // async function taake background mein internet se data mangwa sakein
+        async function getAdvice() {
+            let textElement = document.getElementById("adviceText");
+            textElement.innerText = "Loading data from server...";
+
+            try {
+                // 1. Internet par server ko request bhejna (fetch)
+                let response = await fetch("https://api.adviceslip.com/advice");
+                
+                // 2. Server ke jawab ko JSON format mein read karna
+                let data = await response.json();
+
+                // 3. Live data ko screen par update karna
+                textElement.innerText = `"${data.slip.advice}"`;
+            } catch (error) {
+                textElement.innerText = "Data load nahi ho saka. Internet connection check karein!";
+            }
+        }
+    </script>
+
+</body>
+</html>

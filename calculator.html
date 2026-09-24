@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semester Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .card {
+            background: white;
+            width: 320px;
+            margin: 0 auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            margin-top: 10px;
+            color: #34495e;
+            font-weight: bold;
+        }
+        input {
+            width: 93%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #219150;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Marks Calculator 🎓</h2>
+        
+        <label>Midterm Marks (Out of 30):</label>
+        <input type="number" id="midMarks" placeholder="e.g. 24">
+
+        <label>Internal/Sessional (Out of 20):</label>
+        <input type="number" id="internalMarks" placeholder="e.g. 18">
+
+        <label>Final Exam Marks (Out of 50):</label>
+        <input type="number" id="finalMarks" placeholder="e.g. 40">
+
+        <button onclick="calculateGrade()">Calculate Grade</button>
+
+        <!-- Result yahan show hoga -->
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            // 1. Input fields se values nikalna aur Number mein convert karna
+            let mid = Number(document.getElementById("midMarks").value);
+            let internal = Number(document.getElementById("internalMarks").value);
+            let final = Number(document.getElementById("finalMarks").value);
+
+            // 2. Total Calculate karna
+            let total = mid + internal + final;
+
+            // 3. Conditional Logic (If-Else) se Grade set karna
+            let grade = "";
+            if (total >= 80) {
+                grade = "A (GPA 4.0) 🎉";
+            } else if (total >= 70) {
+                grade = "B (GPA 3.0) 👍";
+            } else if (total >= 60) {
+                grade = "C (GPA 2.0) 🙂";
+            } else if (total >= 50) {
+                grade = "D (GPA 1.0) ⚠️";
+            } else {
+                grade = "F (Fail) ❌";
+            }
+
+            // 4. Result ko HTML page par update karna (DOM Manipulation)
+            document.getElementById("result").innerHTML = 
+                "Total: " + total + " / 100 <br> Grade: " + grade;
+        }
+    </script>
+
+</body>
+</html>

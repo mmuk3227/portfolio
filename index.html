@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mera Pehla Project</title>
+    <style>
+        /* Normal (Light Mode) Styling */
+        body {
+            background-color: #f4f6f9;
+            color: #2c3e50;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            transition: background-color 0.4s, color 0.4s; /* Smooth color change */
+        }
+
+        /* Dark Mode Styling (Jab class active hogi) */
+        .dark-mode {
+            background-color: #1e272e;
+            color: #f5f6fa;
+        }
+
+        img {
+            border-radius: 50%;
+            border: 4px solid #3498db;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+            height: 200px;
+            width: 200px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>Ma ek Software Engineer hun aur ye meri pehli website hai.</p>
+    <img src="MMUK.jpg" alt="Profile Picture">
+    <br>
+    
+    <!-- Theme Switch karne ka button -->
+    <button onclick="toggleTheme()">Dark / Light Mode 🌙</button>
+
+    <script>
+        function toggleTheme() {
+            // Document ke body tag par 'dark-mode' class lagaye ga ya hataye ga
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>

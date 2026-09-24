@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .todo-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        button.add-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button.add-btn:hover {
+            background: #2980b9;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            background: #f8f9fa;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #3498db;
+        }
+        .delete-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="todo-card">
+        <h2>Task Tracker 📝</h2>
+        
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Naya task likhein...">
+            <button class="add-btn" onclick="addTask()">Add</button>
+        </div>
+
+        <!-- Yahan naye tasks dynamically add honge -->
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let taskText = input.value.trim();
+
+            // Verification: Agar input khali ho toh warning dein
+            if (taskText === "") {
+                alert("Pehle koi task likhein!");
+                return;
+            }
+
+            // 1. JavaScript se naya <li> tag create karna
+            let li = document.createElement("li");
+            li.innerHTML = `
+                <span>${taskText}</span>
+                <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+            `;
+
+            // 2. Is naye <li> ko <ul> list ke andar shamil karna
+            document.getElementById("taskList").appendChild(li);
+
+            // 3. Input field ko wapis khali karna
+            input.value = "";
+        }
+
+        function deleteTask(button) {
+            // Click kiye gaye delete button ke parent (yani poore <li>) ko remove karna
+            button.parentElement.remove();
+        }
+    </script>
+
+</body>
+</html>
