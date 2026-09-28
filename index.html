@@ -1,64 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mera Pehla Project</title>
-    <style>
-        /* Normal (Light Mode) Styling */
-        body {
-            background-color: #f4f6f9;
-            color: #2c3e50;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            transition: background-color 0.4s, color 0.4s; /* Smooth color change */
-        }
-
-        /* Dark Mode Styling (Jab class active hogi) */
-        .dark-mode {
-            background-color: #1e272e;
-            color: #f5f6fa;
-        }
-
-        img {
-            border-radius: 50%;
-            border: 4px solid #3498db;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            object-fit: cover;
-            height: 200px;
-            width: 200px;
-        }
-
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            border-radius: 25px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mujeeb Umar | Frontend Developer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>Ma ek Software Engineer hun aur ye meri pehli website hai.</p>
-    <img src="MMUK.jpg" alt="Profile Picture">
-    <br>
-    
-    <!-- Theme Switch karne ka button -->
-    <button onclick="toggleTheme()">Dark / Light Mode 🌙</button>
 
-    <script>
-        function toggleTheme() {
-            // Document ke body tag par 'dark-mode' class lagaye ga ya hataye ga
-            document.body.classList.toggle("dark-mode");
-        }
-    </script>
+    <!-- Header / Navbar -->
+    <header>
+        <nav>
+            <div class="logo">Mujeeb<span>.dev</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Hi, I'm <span>Mujeeb Umar</span></h1>
+        <p>Software Engineering Student & Aspiring Frontend Developer</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            
+            <!-- Project 1 Card -->
+            <div class="project-card">
+                <h3>Semester Grade Calculator</h3>
+                <p>Calculates GPA and marks using vanilla JavaScript logic.</p>
+                <!-- Apni file ka sahi naam likhein agar alag hai -->
+                <a href="calculator.html" class="project-link">View Project</a>
+            </div>
+
+            <!-- Project 2 Card -->
+            <div class="project-card">
+                <h3>To-Do List App</h3>
+                <p>Task manager with dynamic DOM manipulation.</p>
+                <a href="todo.html" class="project-link">View Project</a>
+            </div>
+
+            <!-- Project 3 Card -->
+            <div class="project-card">
+                <h3>Random Advice Generator</h3>
+                <p>Fetches real-time advice using Async/Await & Fetch API.</p>
+                <a href="api.html" class="project-link">View Project</a>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
