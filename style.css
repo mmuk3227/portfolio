@@ -192,4 +192,62 @@ html {
     display: flex;
     justify-content: center;
     gap: 15px;
+}/* Button Base Styling Fix */
+.btn {
+    display: inline-block;
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #0284c7;
+    color: #ffffff;
+}
+
+/* Contact Section Fix for PC & Mobile */
+.contact {
+    padding: 80px 10%;
+    text-align: center;
+    background: #0f172a;
+    clear: both;
+}
+
+.contact h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+.contact p {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    display: block;
+    line-height: 1.6;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* Email Button Outline Style */
+.email-btn {
+    background: transparent;
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+}
+
+.email-btn:hover {
+    background: #38bdf8;
+    color: #0f172a;
 }
