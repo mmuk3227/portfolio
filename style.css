@@ -251,3 +251,52 @@ html {
     background: #38bdf8;
     color: #0f172a;
 }
+/* Theme Toggle Button Style */
+.theme-btn {
+    background: #334155;
+    color: #f8fafc;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+}
+
+.theme-btn:hover {
+    opacity: 0.85;
+}
+
+/* Light Mode Theme Classes */
+body.light-mode {
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+body.light-mode header {
+    background: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .about,
+body.light-mode .project-card {
+    background: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .hero p,
+body.light-mode .about-content p,
+body.light-mode .project-card p,
+body.light-mode .contact p {
+    color: #475569;
+}
+
+body.light-mode .contact {
+    background: #f1f5f9;
+}
+
+body.light-mode .theme-btn {
+    background: #e2e8f0;
+    color: #0f172a;
+}
