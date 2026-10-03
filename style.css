@@ -303,9 +303,17 @@ body.light-mode .theme-btn {
     background: #e2e8f0;
     color: #0f172a;
 }
-/* Logo Image Styling */
-.logo-img {
-    height: 40px;
-    width: auto;
+/* Page Par Bada Logo */
+.page-logo {
+    width: 150px; /* Resize logo (Apni zarurat ke mutabiq bada ya chota karein) */
+    height: auto;
     display: block;
+    margin-bottom: 25px; /* Text se thoda faasla */
+    border-radius: 12px; /* Slight rounded corners */
+}
+
+/* Hero section ko adjust karein logo ke liye */
+.hero {
+    padding-top: 80px; /* Opar se space */
+    padding-bottom: 80px;
 }
