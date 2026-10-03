@@ -300,3 +300,24 @@ body.light-mode .theme-btn {
     background: #e2e8f0;
     color: #0f172a;
 }
+/* Navbar Fix */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Theme Toggle Button Spacing Fix */
+.theme-btn {
+    margin-left: 25px; /* Contact link se faasla banane ke liye */
+    background: #334155;
+    color: #f8fafc;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+}
