@@ -303,3 +303,9 @@ body.light-mode .theme-btn {
     background: #e2e8f0;
     color: #0f172a;
 }
+/* Logo Image Styling */
+.logo-img {
+    height: 40px; /* Resize according to your need */
+    width: auto;
+    display: block;
+}
