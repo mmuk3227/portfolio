@@ -305,7 +305,7 @@ body.light-mode .theme-btn {
 }
 /* Logo Image Styling */
 .logo-img {
-    height: 40px; /* Resize according to your need */
+    height: 40px;
     width: auto;
     display: block;
 }
